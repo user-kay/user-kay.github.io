@@ -1,0 +1,250 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  
+
+  
+  <title>暑假摸鱼之看到的排序算法 | Hexo</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+  <meta name="description" content="放假了比较有空，就整理了一下排序上的一些算法(｡･ω･｡)ﾉ♡">
+<meta property="og:type" content="article">
+<meta property="og:title" content="暑假摸鱼之看到的排序算法">
+<meta property="og:url" content="http://yoursite.com/2020/07/22/%E6%9A%91%E5%81%87%E6%91%B8%E9%B1%BC%E6%8E%92%E5%BA%8F%E7%AE%97%E6%B3%95/index.html">
+<meta property="og:site_name" content="Hexo">
+<meta property="og:description" content="放假了比较有空，就整理了一下排序上的一些算法(｡･ω･｡)ﾉ♡">
+<meta property="og:locale" content="en_US">
+<meta property="article:published_time" content="2020-07-22T10:52:51.000Z">
+<meta property="article:modified_time" content="2020-07-24T07:32:53.058Z">
+<meta property="article:author" content="John Doe">
+<meta name="twitter:card" content="summary">
+  
+    <link rel="alternate" href="/atom.xml" title="Hexo" type="application/atom+xml">
+  
+  
+    <link rel="icon" href="/favicon.png">
+  
+  
+    <link href="//fonts.googleapis.com/css?family=Source+Code+Pro" rel="stylesheet" type="text/css">
+  
+  
+<link rel="stylesheet" href="/css/style.css">
+
+<meta name="generator" content="Hexo 5.0.2"></head>
+
+<body>
+  <div id="container">
+    <div id="wrap">
+      <header id="header">
+  <div id="banner"></div>
+  <div id="header-outer" class="outer">
+    <div id="header-title" class="inner">
+      <h1 id="logo-wrap">
+        <a href="/" id="logo">Hexo</a>
+      </h1>
+      
+    </div>
+    <div id="header-inner" class="inner">
+      <nav id="main-nav">
+        <a id="main-nav-toggle" class="nav-icon"></a>
+        
+          <a class="main-nav-link" href="/">Home</a>
+        
+          <a class="main-nav-link" href="/archives">Archives</a>
+        
+      </nav>
+      <nav id="sub-nav">
+        
+          <a id="nav-rss-link" class="nav-icon" href="/atom.xml" title="RSS Feed"></a>
+        
+        <a id="nav-search-btn" class="nav-icon" title="Search"></a>
+      </nav>
+      <div id="search-form-wrap">
+        <form action="//google.com/search" method="get" accept-charset="UTF-8" class="search-form"><input type="search" name="q" class="search-form-input" placeholder="Search"><button type="submit" class="search-form-submit">&#xF002;</button><input type="hidden" name="sitesearch" value="http://yoursite.com"></form>
+      </div>
+    </div>
+  </div>
+</header>
+      <div class="outer">
+        <section id="main"><article id="post-暑假摸鱼排序算法" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2020/07/22/%E6%9A%91%E5%81%87%E6%91%B8%E9%B1%BC%E6%8E%92%E5%BA%8F%E7%AE%97%E6%B3%95/" class="article-date">
+  <time datetime="2020-07-22T10:52:51.000Z" itemprop="datePublished">2020-07-22</time>
+</a>
+    
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 class="article-title" itemprop="name">
+      暑假摸鱼之看到的排序算法
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p>放假了比较有空，就整理了一下排序上的一些算法(｡･ω･｡)ﾉ♡</p>
+<a id="more"></a>
+<p>1.冒泡排序</p>
+<ul>
+<li>思想<blockquote>
+<p>从第一项开始与后一项相比较，如果发现大（小）的就交换<br>交换的对数会随次数即i的增加而减少<br>每做完一次循环，最后的一个数是最大（小）的数</p>
+</blockquote>
+</li>
+<li>特点：&gt;_容易理解，_**<em>但是真的超级慢**</em></li>
+<li><del>用快排它不舒服吗</del><br>下面是代码</li>
+</ul>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line">void bubblesort(int a[], int n) &#123;</span><br><span class="line">    for(int i &#x3D; 0 ; i &lt; n ; i++) &#123;</span><br><span class="line">        for(int j &#x3D; 0 ; j &lt; n - i - 1 ; j++ ) &#123;</span><br><span class="line">            if(a[j] &gt; a[j+1]) &#123;</span><br><span class="line">                int t &#x3D; a[j];</span><br><span class="line">                a[j] &#x3D; a[j + 1];</span><br><span class="line">                a[j+1] &#x3D; t;</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">&#125; </span><br></pre></td></tr></table></figure>
+
+<p>2.选择排序</p>
+<ul>
+<li>思想<blockquote>
+<p>在没有排好的队列中找到最小（大）的元素，放到最前面即起始位置<br>在剩余未排好序列中寻找最小（大）的元素，放到已排好的序列的末尾</p>
+<pre><code>eg：2 1 3 4 2 9 -&gt; 1 2 3 4 2 9</code></pre>
+</blockquote>
+</li>
+<li>下面贴上代码<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line">void selectionsort(int a[], int n) &#123;</span><br><span class="line">    int midindex, temp;</span><br><span class="line">    for(int i &#x3D; 0 ; i &lt; n ; i++ ) &#123;</span><br><span class="line">        midindex &#x3D; i;</span><br><span class="line">        for(int j &#x3D; i + 1 ; j &lt; n ; j++ ) &#123;</span><br><span class="line">            if(a[midindex] &gt; a[j] ) &#123;</span><br><span class="line">                midindex &#x3D; j ;</span><br><span class="line">                &#125;</span><br><span class="line">            &#125;</span><br><span class="line">        temp &#x3D; a[midindex] ;</span><br><span class="line">        a[midindex] &#x3D; a[i] ;</span><br><span class="line">        a[i] &#x3D; temp;</span><br><span class="line">    &#125;</span><br><span class="line">&#125; </span><br></pre></td></tr></table></figure>
+3.快速排序（参考了一下洛谷的快排模板）<ul>
+<li>特点：<blockquote>
+<p><em>非常快，可以试一下逃TLE _<br>_比较复杂 ,比较容易写错</em></p>
+</blockquote>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br></pre></td><td class="code"><pre><span class="line">void quicksort(int *a,int left,int right) &#123;</span><br><span class="line">    if(left &gt; right) </span><br><span class="line">    return ;</span><br><span class="line">    &#x2F;&#x2F;如果是左边比右边大可以直接结束进程</span><br><span class="line">    int i &#x3D; left, j &#x3D; right ;</span><br><span class="line">    int mid &#x3D; a[(left+right)&#x2F;2];</span><br><span class="line">    &#x2F;&#x2F;mid其实是作为一个检测的点</span><br><span class="line">    while( i &lt;&#x3D; j ) &#123;</span><br><span class="line">        while(a[j] &gt; mid) &#123;</span><br><span class="line">            j--;</span><br><span class="line">        &#125;</span><br><span class="line">        while(a[i] &lt; mid) &#123;</span><br><span class="line">            i++;</span><br><span class="line">        &#125;</span><br><span class="line">        &#x2F;&#x2F;左边的往右边走，右边的往左边走</span><br><span class="line">        if(i &lt;&#x3D; j) &#123;</span><br><span class="line">            int temp &#x3D; a[i];</span><br><span class="line">            a[i] &#x3D; a[j];</span><br><span class="line">            a[j] &#x3D; temp;</span><br><span class="line">            i++;</span><br><span class="line">            j--;</span><br><span class="line">        &#125; </span><br><span class="line">        if(i &lt; right ) &#123;</span><br><span class="line">            quicksort(a,i,right);</span><br><span class="line">        &#125; </span><br><span class="line">        if(j &gt; left) &#123;</span><br><span class="line">            quicksort(a,j,left);</span><br><span class="line">        &#125;</span><br><span class="line">    &#125; </span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+
+</li>
+</ul>
+</li>
+</ul>
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://yoursite.com/2020/07/22/%E6%9A%91%E5%81%87%E6%91%B8%E9%B1%BC%E6%8E%92%E5%BA%8F%E7%AE%97%E6%B3%95/" data-id="ckdu93ccq00047ktn8o9sckjb" class="article-share-link">Share</a>
+      
+      
+    </footer>
+  </div>
+  
+    
+<nav id="article-nav">
+  
+    <a href="/2020/07/24/%E5%85%AB%E7%9A%87%E5%90%8E%E9%97%AE%E9%A2%98%EF%BC%88p1219%E9%A2%98%E8%A7%A3%EF%BC%89/" id="article-nav-newer" class="article-nav-link-wrap">
+      <strong class="article-nav-caption">Newer</strong>
+      <div class="article-nav-title">
+        
+          八皇后问题（洛谷p1219题解）
+        
+      </div>
+    </a>
+  
+  
+    <a href="/2020/07/14/%E5%A4%A7%E4%BD%9C%E4%B8%9A%E7%9A%84%E9%97%AA%E7%83%81%E7%89%B9%E6%95%88/" id="article-nav-older" class="article-nav-link-wrap">
+      <strong class="article-nav-caption">Older</strong>
+      <div class="article-nav-title">web大作业的闪烁特效</div>
+    </a>
+  
+</nav>
+
+  
+</article>
+
+</section>
+        
+          <aside id="sidebar">
+  
+    
+
+  
+    
+
+  
+    
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Archives</h3>
+    <div class="widget">
+      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/9999/09/">September 9999</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2020/07/">July 2020</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2020/05/">May 2020</a></li></ul>
+    </div>
+  </div>
+
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Recent Posts</h3>
+    <div class="widget">
+      <ul>
+        
+          <li>
+            <a href="/9999/09/09/%E6%83%B3%E8%AF%B4%E7%9A%84%E8%AF%9D/">想说的话</a>
+          </li>
+        
+          <li>
+            <a href="/2020/07/24/%E9%AB%98%E7%B2%BE%E5%BA%A6%E7%AE%97%E6%B3%95/">高精度算法</a>
+          </li>
+        
+          <li>
+            <a href="/2020/07/24/%E5%85%AB%E7%9A%87%E5%90%8E%E9%97%AE%E9%A2%98%EF%BC%88p1219%E9%A2%98%E8%A7%A3%EF%BC%89/">八皇后问题（洛谷p1219题解）</a>
+          </li>
+        
+          <li>
+            <a href="/2020/07/22/%E6%9A%91%E5%81%87%E6%91%B8%E9%B1%BC%E6%8E%92%E5%BA%8F%E7%AE%97%E6%B3%95/">暑假摸鱼之看到的排序算法</a>
+          </li>
+        
+          <li>
+            <a href="/2020/07/14/%E5%A4%A7%E4%BD%9C%E4%B8%9A%E7%9A%84%E9%97%AA%E7%83%81%E7%89%B9%E6%95%88/">web大作业的闪烁特效</a>
+          </li>
+        
+      </ul>
+    </div>
+  </div>
+
+  
+</aside>
+        
+      </div>
+      <footer id="footer">
+  
+  <div class="outer">
+    <div id="footer-info" class="inner">
+      &copy; 2020 John Doe<br>
+      Powered by <a href="http://hexo.io/" target="_blank">Hexo</a>
+    </div>
+  </div>
+</footer>
+    </div>
+    <nav id="mobile-nav">
+  
+    <a href="/" class="mobile-nav-link">Home</a>
+  
+    <a href="/archives" class="mobile-nav-link">Archives</a>
+  
+</nav>
+    
+
+<script src="//ajax.googleapis.com/ajax/libs/jquery/2.0.3/jquery.min.js"></script>
+
+
+  
+<link rel="stylesheet" href="/fancybox/jquery.fancybox.css">
+
+  
+<script src="/fancybox/jquery.fancybox.pack.js"></script>
+
+
+
+
+<script src="/js/script.js"></script>
+
+
+
+
+  </div>
+</body>
+</html>
